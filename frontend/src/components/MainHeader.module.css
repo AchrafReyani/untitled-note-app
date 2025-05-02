@@ -35,3 +35,9 @@
   .button:hover {
     background-color: #8c6cf7;
   }
+
+  .disabled {
+    /* pointer-events: none; */
+    opacity: 0.5;
+    cursor: not-allowed;
+  }

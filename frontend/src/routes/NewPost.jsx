@@ -14,7 +14,7 @@ function NewPost() {
           <textarea id="body" name="body" required rows={3} />
         </p>
         <p>
-          <label htmlFor="name">Your name</label>
+          <label htmlFor="name">Topic</label>
           <input type="text" id="name" name="author" required />
         </p>
         <p className={classes.actions}>
