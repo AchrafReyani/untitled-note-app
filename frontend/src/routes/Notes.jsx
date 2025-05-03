@@ -1,20 +1,20 @@
 import { Outlet } from "react-router-dom";
 
-import PostList from ".././components/PostList";
+import NotesList from "../components/NotesList";
 
-function Posts() {
+function Notes() {
 
   return (
     <>
     <Outlet />
     <main>
-      <PostList />
+      <NotesList />
     </main>
     </>
   );
 }
 
-export default Posts;
+export default Notes;
 
 export async function loader() {
   try {

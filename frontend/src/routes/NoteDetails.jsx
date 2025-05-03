@@ -1,9 +1,9 @@
 import { useLoaderData, Link } from 'react-router-dom';
 
 import Modal from '../components/Modal';
-import classes from './PostDetails.module.css';
+import classes from './NoteDetails.module.css';
 
-function PostDetails() {
+function NoteDetails() {
   const note = useLoaderData();
 
   if (!note) {
@@ -31,7 +31,7 @@ function PostDetails() {
   );
 }
 
-export default PostDetails;
+export default NoteDetails;
 
 export async function loader({params}) {
     const response = await fetch('http://localhost:8080/notes/' + params.id);

@@ -1,8 +1,8 @@
 import { Link } from 'react-router-dom';
 
-import classes from './Post.module.css';
+import classes from './Note.module.css';
 
-function Post({id, author, text}) {
+function Note({id, author, text}) {
     return (
         <li className={classes.post}>
             <Link to={id}>
@@ -13,4 +13,4 @@ function Post({id, author, text}) {
     );
 }
 
-export default Post;
+export default Note;

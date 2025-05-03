@@ -1,10 +1,10 @@
 import { Link, Form, redirect } from 'react-router-dom';
 
 
-import classes from './NewPost.module.css';
+import classes from './NewNote.module.css';
 import Modal from '../components/Modal';
 
-function NewPost() {
+function NewNote() {
   
   return (
     <Modal>
@@ -26,7 +26,7 @@ function NewPost() {
   );
 }
 
-export default NewPost;
+export default NewNote;
 
 export async function action({request}) {
   const formData = await request.formData();

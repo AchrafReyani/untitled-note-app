@@ -3,10 +3,10 @@ import { createRoot } from 'react-dom/client'
 import { RouterProvider, createBrowserRouter } from 'react-router-dom'
 
 import './index.css'
-import Posts, { loader as postsLoader } from './routes/Posts.jsx'
-import NewPost, { action as newPostAction } from './routes/NewPost.jsx'
-import PostDetails , { loader as postDetailsLoader } from './routes/PostDetails.jsx'
-import PostsError from './routes/PostsError.jsx'
+import Notes, { loader as postsLoader } from './routes/Notes.jsx'
+import NewNote, { action as newPostAction } from './routes/NewNote.jsx'
+import NoteDetails , { loader as postDetailsLoader } from './routes/NoteDetails.jsx'
+import NotesError from './routes/NotesError.jsx'
 import RootLayout from './routes/RootLayout.jsx'
 import { BackendStatusProvider } from './components/BackendStatusContext.jsx'
 
@@ -17,12 +17,12 @@ const router = createBrowserRouter([
     children: [
       { 
         path: '/',
-        element: <Posts />,
+        element: <Notes />,
         loader: postsLoader,
-        errorElement: <PostsError />,
+        errorElement: <NotesError />,
         children:  [ 
-          { path: 'create-post', element: <NewPost />, action: newPostAction },
-          { path: ':id', element: <PostDetails />, loader: postDetailsLoader }
+          { path: 'create-post', element: <NewNote />, action: newPostAction },
+          { path: ':id', element: <NoteDetails />, loader: postDetailsLoader }
         ],
       },
     ],

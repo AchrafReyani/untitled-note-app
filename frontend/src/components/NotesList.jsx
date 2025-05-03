@@ -1,17 +1,17 @@
 import { useLoaderData } from 'react-router-dom';
 
-import Post from './Post';
+import Note from './Note';
 
-import classes from './PostList.module.css';
+import classes from './NotesList.module.css';
 
-function PostList() {
+function NotesList() {
     const notes = useLoaderData();
 
     return (
         <>
         {notes.length > 0 && (
         <ul className={classes.notes}>
-            {notes.map((note) => <Post key={note.id} id={note.id} author={note.author} text={note.body} />)}
+            {notes.map((note) => <Note key={note.id} id={note.id} author={note.author} text={note.body} />)}
         </ul>
         )}
         {notes.length === 0 && (
@@ -23,4 +23,4 @@ function PostList() {
     )
 }
 
-export default PostList;
+export default NotesList;
