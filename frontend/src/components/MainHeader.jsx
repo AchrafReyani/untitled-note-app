@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom';
-import { MdPostAdd, MdMessage } from 'react-icons/md';
+import { MdPostAdd, MdOutlineStickyNote2 } from 'react-icons/md';
 import { useContext } from 'react';
 
 import { BackendStatusContext } from './BackendStatusContext';
@@ -11,7 +11,7 @@ function MainHeader() {
   return (
     <header className={classes.header}>
       <h1 className={classes.logo}>
-        <MdMessage />
+        <MdOutlineStickyNote2 />
         Untitled Note App
       </h1>
       <p>
