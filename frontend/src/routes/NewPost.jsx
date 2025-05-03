@@ -14,7 +14,7 @@ function NewPost() {
           <textarea id="body" name="body" required rows={3} />
         </p>
         <p>
-          <label htmlFor="name">Topic</label>
+          <label htmlFor="name">Title</label>
           <input type="text" id="name" name="author" required />
         </p>
         <p className={classes.actions}>
@@ -31,7 +31,7 @@ export default NewPost;
 export async function action({request}) {
   const formData = await request.formData();
   const postData = Object.fromEntries(formData);
-  await fetch('http://localhost:8080/posts', {
+  await fetch('http://localhost:8080/notes', {
     method: 'POST',
     body: JSON.stringify(postData),
     headers: {

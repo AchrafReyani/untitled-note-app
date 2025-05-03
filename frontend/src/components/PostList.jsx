@@ -5,22 +5,20 @@ import Post from './Post';
 import classes from './PostList.module.css';
 
 function PostList() {
-    const posts = useLoaderData();
+    const notes = useLoaderData();
 
     return (
         <>
-        {posts.length > 0 && (
-        <ul className={classes.posts}>
-            {posts.map((post) => <Post key={post.id} id={post.id} author={post.author} text={post.body} />)}
+        {notes.length > 0 && (
+        <ul className={classes.notes}>
+            {notes.map((note) => <Post key={note.id} id={note.id} author={note.author} text={note.body} />)}
         </ul>
         )}
-        {posts.length === 0 && (
+        {notes.length === 0 && (
             <div style={{textAlign: 'center'}}>
-                <p>there are no posts here </p>
-            </div>
-            
+                <p>there are no notes here </p>
+            </div>            
         )}
-       
         </>
     )
 }

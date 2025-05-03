@@ -8,7 +8,7 @@ export function BackendStatusProvider({ children }) {
     useEffect(() => {
         async function checkBackend() {
             try {
-                const response = await fetch('http://localhost:8080/posts', {method: 'HEAD'});
+                const response = await fetch('http://localhost:8080/notes', {method: 'HEAD'});
                 setIsBackendOnline(response.ok);
             } catch (err) {
                 setIsBackendOnline(false);

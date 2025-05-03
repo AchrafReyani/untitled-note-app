@@ -1,7 +1,7 @@
 const express = require('express');
 const bodyParser = require('body-parser');
 
-const { getStoredPosts, storePosts } = require('./data/posts');
+const { getStoredNotes, storeNotes } = require('./data/notes');
 
 const app = express();
 
@@ -16,27 +16,27 @@ app.use((req, res, next) => {
   next();
 });
 
-app.get('/posts', async (req, res) => {
-  const storedPosts = await getStoredPosts();
-  res.json({ posts: storedPosts });
+app.get('/notes', async (req, res) => {
+  const storedNotes = await getStoredNotes();
+  res.json({ notes: storedNotes });
 });
 
-app.get('/posts/:id', async (req, res) => {
-  const storedPosts = await getStoredPosts();
-  const post = storedPosts.find((post) => post.id === req.params.id);
-  res.json({ post });
+app.get('/notes/:id', async (req, res) => {
+  const storedNotes = await getStoredNotes();
+  const note = storedNotes.find((note) => note.id === req.params.id);
+  res.json({ note });
 });
 
-app.post('/posts', async (req, res) => {
-  const existingPosts = await getStoredPosts();
-  const postData = req.body;
-  const newPost = {
-    ...postData,
+app.post('/notes', async (req, res) => {
+  const existingNotes = await getStoredNotes();
+  const noteData = req.body;
+  const newNote = {
+    ...noteData,
     id: Math.random().toString(),
   };
-  const updatedPosts = [newPost, ...existingPosts];
-  await storePosts(updatedPosts);
-  res.status(201).json({ message: 'Stored new post.', post: newPost });
+  const updatedNotes = [newNote, ...existingNotes];
+  await storeNotes(updatedNotes);
+  res.status(201).json({ message: 'Stored new note.', note: newNote });
 });
 
 app.listen(8080);
