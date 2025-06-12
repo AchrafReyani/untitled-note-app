@@ -22,3 +22,25 @@
   .details a {
     text-decoration: none;
   }
+
+  .textarea {
+  width: 100%;
+  min-height: 120px;
+  font-size: 1rem;
+  padding: 0.5rem;
+  margin-bottom: 1rem;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  resize: vertical;
+}
+
+.actions {
+  display: flex;
+  gap: 1rem;
+  justify-content: flex-end;
+}
+
+.error {
+  color: red;
+  margin-bottom: 0.5rem;
+}

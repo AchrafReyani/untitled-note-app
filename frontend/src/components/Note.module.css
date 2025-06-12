@@ -10,6 +10,23 @@
   .post a {
     text-decoration: none;
   }
+
+  .deleteButton {
+  position: absolute;
+  top: 0.5rem;
+  right: 0.5rem;
+  background: transparent;
+  border: none;
+  color: red;
+  font-size: 1.2rem;
+  cursor: pointer;
+}
+
+.post {
+  position: relative; /* Needed for absolute button positioning */
+  padding-right: 2rem; /* Add spacing if needed */
+}
+
   
   .author {
     font-size: 0.8rem;
@@ -37,3 +54,8 @@
       transform: translateY(0);
     }
   }
+
+  .disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
